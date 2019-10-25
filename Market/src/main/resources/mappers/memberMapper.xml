@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.web.member.dao.MemberDAO">
+
+<insert id="insertMember" parameterType="com.spring.web.member.vo.MemberVO">
+	insert into ShoppingMall.member(id, pw, name, email, gender, birth, addr1, addr2, addr3) values(#{id}, #{pw}, #{name}, #{email}, #{gender}, #{birth}, #{addr1}, #{addr2}, #{addr3})
+</insert>
+
+<select id="getLogin" parameterType="com.spring.web.member.vo.MemberVO" resultType="int">
+	select count(*) from ShoppingMall.member where id = #{id}
+</select>
+
+
+<select id="getLoginProc" parameterType="com.spring.web.member.vo.MemberVO" resultType="int">
+	select count(*) from ShoppingMall.member where id = #{id} and pw = #{pw}
+</select>
+
+<select id="getInfo" parameterType="com.spring.web.member.vo.MemberVO" resultType="com.spring.web.member.vo.MemberVO">
+	select * from ShoppingMall.member where id = #{id}
+</select>
+
+<delete id="deleteMember" parameterType="com.spring.web.member.vo.MemberVO">
+	delete from ShoppingMall.member where id = #{id}
+</delete>
+
+<update id="updateMember" parameterType="com.spring.web.member.vo.MemberVO">
+	update ShoppingMall.member set pw = #{pw}, email = #{email}, addr1 = #{addr1}, addr2 = #{addr2}, addr3 = #{addr3} where id = #{id}
+</update>
+
+
+</mapper>
+
+
+
