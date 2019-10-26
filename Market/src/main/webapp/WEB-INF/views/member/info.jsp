@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
  <article class="container">
             <div class="page-header">
                 <div class="col-md-6 col-md-offset-3">
